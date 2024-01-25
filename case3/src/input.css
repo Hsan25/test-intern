@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#nav.active {
+  @apply flex;
+}
+
+.navbar-scroll {
+  @apply fixed top-0  bg-primary border-b-2 z-50 border-slate-300;
+  /* filter: blur(1); */
+  backdrop-filter: blur(20px);
+}
