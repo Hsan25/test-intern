@@ -49,8 +49,17 @@ const fruits = [
 
 // 1. Buah apa saja yang dimiliki Andi? (fruitName)
 
-const fruitAndi = fruits.map((fruit) => fruit.fruitName);
-console.log(fruitAndi);
+const fruitAndi = [];
+
+for (const fruit of fruits) {
+  const fruitName = fruit.fruitName.toLowerCase();
+  // supaya tidak duplikat Namenya
+  if (!fruitAndi.includes(fruitName)) {
+    fruitAndi.push(fruitName);
+  }
+}
+
+console.log("fruit andi:", fruitAndi);
 // output [ 'Apel', 'Kurma', 'apel', 'Manggis', 'Jeruk Bali', 'KURMA', 'Salak' ]
 
 // 2. Andi memisahkan buahnya menjadi beberapa wadah berdasarkan
@@ -65,6 +74,7 @@ const fruitInWadah = [];
 for (const fruit of fruits) {
   const fruitType = fruit.fruitType;
   // supaya tidak duplikat typenya
+  //
   if (!fruitTypes.includes(fruitType)) {
     fruitTypes.push(fruitType);
   }
@@ -97,5 +107,5 @@ for (let i = 0; i < jumlahWadah; i++) {
 
 console.log(stock);
 
-// 4. Apakah ada komentar terkait kasus di atas? 
+// 4. Apakah ada komentar terkait kasus di atas?
 // kasusnya cukup menantang dan cukup kompleks.
